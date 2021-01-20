@@ -1,0 +1,11 @@
+
+.form{
+  margin: 50px auto;
+  width: 500px;
+  border-radius: 15px;
+  border: 1px solid #83aaef;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-family: 'Pacifico', cursive;
+}

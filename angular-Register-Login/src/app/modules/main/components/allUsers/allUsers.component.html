@@ -1,0 +1,7 @@
+<div>
+  <div *ngIf="users">
+    <h2 *ngFor="let user of users">
+      {{user.id}} ** {{user.email}} ** {{user.is_staff}}
+    </h2>
+  </div>
+</div>

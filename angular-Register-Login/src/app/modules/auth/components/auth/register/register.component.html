@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <label >email</label>
+  <input type="email" class="form-control" id="exampleInputEmail1"
+         formControlName="email" aria-describedby="emailHelp"
+         placeholder="Email">
+  <label>Пароль</label>
+  <br>
+  <p>{{form.controls.email.errors}}</p>
+  <input type="password" class="form-control"
+         formControlName="password" id="exampleInputPassword1"
+         placeholder="Password"
+  >
+  <p *ngIf="errors">{{errors.email}}  {{errors.password}}</p>
+  <br>
+  <button type="button" class="btn btn-success"  (click)="register(form)">Register</button>
+</form>

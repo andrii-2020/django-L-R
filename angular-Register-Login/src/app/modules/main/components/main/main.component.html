@@ -1,0 +1,8 @@
+
+<div>
+  <button routerLink="allusers">allUser</button>
+  <ng-container *ngIf="user">
+    <h2>{{user.id}} ** {{user.email}} ** {{user.is_staff}}</h2>
+  </ng-container>
+
+</div>
