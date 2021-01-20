@@ -11,15 +11,17 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   errors: any;
+  submitted: boolean;
 
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl('')
+      email: new FormControl('', [Validators.pattern('^[a-zA-Z0-9_.+-]+@+[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
+      password: new FormControl('', [Validators.minLength(3)])
     });
+    this.submitted = true;
   }
 
   login(form: FormGroup): void {

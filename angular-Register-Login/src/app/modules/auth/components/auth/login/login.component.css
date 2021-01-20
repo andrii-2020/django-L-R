@@ -1,0 +1,16 @@
+.btn-login{
+  background-color: rgba(21, 111, 51, 0);
+  color: #0160ee;
+  width: 100px;
+  border: 1px solid rgba(6, 99, 236, 0.89);
+  padding: 5px;
+}
+.btn-login:hover{
+  border: 1px solid rgba(6, 236, 217, 0.89);
+  color: #9fbcea;
+  border-radius: 5px;
+}
+.btn-login:disabled{
+  border: 1px solid rgba(236, 6, 6, 0.89);
+  color: #ec5555;
+}

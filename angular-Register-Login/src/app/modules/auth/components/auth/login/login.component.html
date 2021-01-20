@@ -1,17 +1,32 @@
 
+
 <form [formGroup]="form">
+  <div class="form-group">
   <label >email</label>
   <input type="email" class="form-control" id="exampleInputEmail1"
+         [ngClass]="{'is-invalid':submitted && form.controls.email.errors}"
          formControlName="email" aria-describedby="emailHelp"
          placeholder="Email">
+    <small *ngIf="form.controls.email.errors" id="emailHelp" class="form-text text-muted"
+           style="color: white; font-family: 'Old Standard TT', serif; font-size: 14px;">
+        Email GAVNO!!!!
+    </small>
+    <br>
   <label>Пароль</label>
   <br>
-  <p>{{form.controls.email.errors}}</p>
   <input type="password" class="form-control"
          formControlName="password" id="exampleInputPassword1"
          placeholder="Password"
   >
-  <div *ngIf="errors">{{errors.email}} ||| {{errors.password}}</div>
+    <small *ngIf="form.controls.password.errors" id="passwordHelp" class="form-text text-muted"
+           style="color: white; font-family: 'Old Standard TT', serif; font-size: 14px;">
+      PASSWORD GAVNO!!!!
+    </small>
+  </div>
+  <div *ngIf="errors">{{errors.email}}  {{errors.password}}</div>
   <br>
-  <button type="button" class="btn btn-success"  (click)="login(form)">Login</button>
+  <button type="button" class="btn-login"
+          [disabled]="form.controls.password.errors || (form.controls.email.errors)"
+          (click)="login(form)">Login</button>
 </form>
+
